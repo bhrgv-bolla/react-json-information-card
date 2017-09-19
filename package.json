@@ -15,7 +15,9 @@
     "url": "https://github.com/bhrgv-bolla/json-information-card/issues"
   },
   "homepage": "https://github.com/bhrgv-bolla/json-information-card",
-  "dependencies": {},
+  "dependencies": {
+    "babel-plugin-transform-class-properties": "^6.24.1"
+  },
   "devDependencies": {
     "electrode-archetype-react-component": "^1.0.0",
     "electrode-archetype-react-component-dev": "^1.0.0",

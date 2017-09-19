@@ -1,5 +1,9 @@
 # json-information-card
 
+[![npm Version][npm-badge]][npm]
+[![Build Status][travis-badge]][travis]
+[![Dependency Status][david-badge]][david]
+
 __COMPONENT DESCRIPTION GOES HERE__
 
 
