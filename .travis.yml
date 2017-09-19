@@ -3,8 +3,7 @@ sudo: false
 node_js:
   - 6
 before_install: if [[ `npm -v` != 3* ]]; then npm i -g npm@3; fi
-script: npm run test
-script: npm run report-coverage
+script: npm run test; npm run report-coverage
 notifications:
   email:
     on_success: change
