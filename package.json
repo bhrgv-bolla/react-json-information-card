@@ -1,0 +1,39 @@
+{
+  "name": "json-information-card",
+  "version": "1.0.0",
+  "description": "json-information-card",
+  "main": "lib/index.js",
+  "author": {
+    "name": "Bhargav Bolla",
+    "url": "https://github.com/bhrgv-bolla"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bhrgv-bolla/json-information-card.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bhrgv-bolla/json-information-card/issues"
+  },
+  "homepage": "https://github.com/bhrgv-bolla/json-information-card",
+  "dependencies": {},
+  "devDependencies": {
+    "electrode-archetype-react-component": "^1.0.0",
+    "electrode-archetype-react-component-dev": "^1.0.0",
+    "gulp": "^3.9.1"
+  },
+  "engines": {
+    "node": "^4.2.6",
+    "npm": "^3.5.3"
+  },
+  "scripts": {
+    "prepublish": "gulp prepublish",
+    "start": "gulp demo",
+    "test": "gulp check"
+  },
+  "keywords": [
+    "react",
+    "electrode",
+    "electrode-component",
+    "react-component"
+  ]
+}
