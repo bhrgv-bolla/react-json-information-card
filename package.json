@@ -31,7 +31,8 @@
     "prepublish": "gulp prepublish",
     "start": "gulp demo",
     "test": "gulp check",
-    "report-coverage": "codecov -t ca3c16e4-d825-41cd-aff8-fd5ef0e107b0"
+    "report-coverage": "codecov -t ca3c16e4-d825-41cd-aff8-fd5ef0e107b0",
+    "docgen": "gulp generate"
   },
   "keywords": [
     "react",
