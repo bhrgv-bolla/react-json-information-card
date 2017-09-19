@@ -1,5 +1,8 @@
 # json-information-card
 
+
+[![Build Status](https://travis-ci.org/bhrgv-bolla/react-json-information-card.svg?branch=master)](https://travis-ci.org/bhrgv-bolla/react-json-information-card)
+
  JSON has become the de-facto standard of sharing information b/w systems. While the information
  is consumed for many different purposes, often a requirement arises to display information in a 
  very simple straight forward way. This customizable component will help do that. It tries to provide
