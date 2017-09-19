@@ -1,5 +1,6 @@
 # json-information-card
 
+[![npm version](https://badge.fury.io/js/json-information-card.svg)](https://badge.fury.io/js/json-information-card)
 [![dependencies Status](https://david-dm.org/bhrgv-bolla/react-json-information-card/status.svg)](https://david-dm.org/bhrgv-bolla/react-json-information-card)
 [![devDependencies Status](https://david-dm.org/bhrgv-bolla/react-json-information-card/dev-status.svg)](https://david-dm.org/bhrgv-bolla/react-json-information-card?type=dev)
 [![Build Status](https://travis-ci.org/bhrgv-bolla/react-json-information-card.svg?branch=master)](https://travis-ci.org/bhrgv-bolla/react-json-information-card)
