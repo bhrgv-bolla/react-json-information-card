@@ -1,10 +1,9 @@
 # json-information-card
 
-[![npm Version][npm-badge]][npm]
-[![Build Status][travis-badge]][travis]
-[![Dependency Status][david-badge]][david]
-
-__COMPONENT DESCRIPTION GOES HERE__
+ JSON has become the de-facto standard of sharing information b/w systems. While the information
+ is consumed for many different purposes, often a requirement arises to display information in a 
+ very simple straight forward way. This customizable component will help do that. It tries to provide
+ a decent view mainly driven by configuration / meta information. 
 
 
 ## Demo & Examples
