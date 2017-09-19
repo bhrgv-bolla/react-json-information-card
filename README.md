@@ -1,5 +1,7 @@
 # json-information-card
 
+[![dependencies Status](https://david-dm.org/bhrgv-bolla/react-json-information-card/status.svg)](https://david-dm.org/bhrgv-bolla/react-json-information-card)
+[![devDependencies Status](https://david-dm.org/bhrgv-bolla/react-json-information-card/dev-status.svg)](https://david-dm.org/bhrgv-bolla/react-json-information-card?type=dev)
 [![Build Status](https://travis-ci.org/bhrgv-bolla/react-json-information-card.svg?branch=master)](https://travis-ci.org/bhrgv-bolla/react-json-information-card)
 [![codecov](https://codecov.io/gh/bhrgv-bolla/react-json-information-card/branch/master/graph/badge.svg)](https://codecov.io/gh/bhrgv-bolla/react-json-information-card)
 
