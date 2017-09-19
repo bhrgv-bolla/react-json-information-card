@@ -15,10 +15,10 @@
     "url": "https://github.com/bhrgv-bolla/json-information-card/issues"
   },
   "homepage": "https://github.com/bhrgv-bolla/json-information-card",
-  "dependencies": {
-    "babel-plugin-transform-class-properties": "^6.24.1"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "codecov": "^2.3.0",
     "electrode-archetype-react-component": "^1.0.0",
     "electrode-archetype-react-component-dev": "^1.0.0",
     "gulp": "^3.9.1"
@@ -30,7 +30,8 @@
   "scripts": {
     "prepublish": "gulp prepublish",
     "start": "gulp demo",
-    "test": "gulp check"
+    "test": "gulp check",
+    "report-coverage": "codecov -t ca3c16e4-d825-41cd-aff8-fd5ef0e107b0"
   },
   "keywords": [
     "react",
