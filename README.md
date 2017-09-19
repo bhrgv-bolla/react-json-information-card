@@ -14,7 +14,7 @@
 
 ## Demo & Examples
 
-Live demo: [bhrgv-bolla.github.io/json-information-card](http://bhrgv-bolla.github.io/json-information-card/)
+Live demo: [bhrgv-bolla.github.io/react-json-information-card](https://bhrgv-bolla.github.io/react-json-information-card/)
 
 To build the examples locally, run:
 
