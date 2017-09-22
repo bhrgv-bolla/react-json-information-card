@@ -24,6 +24,16 @@ const components = [
         noRender: true
       }
     ]
+  },
+  {
+    title: "InformationHeader",
+    examples: [
+      {
+        type: "playground",
+        code: require("raw!./examples/information-header.example"),
+        noRender: true
+      }
+    ]
   }
 ];
 

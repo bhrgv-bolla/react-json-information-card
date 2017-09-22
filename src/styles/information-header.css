@@ -1,0 +1,15 @@
+/*
+  Styles related to the information header.
+ */
+
+.information_header {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  line-height: 25px;
+  align-self: center
+}
