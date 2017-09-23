@@ -6,6 +6,6 @@ const buildStateKey = (name) => {
 }
 
 
-export {
+export default {
   buildStateKey
 };

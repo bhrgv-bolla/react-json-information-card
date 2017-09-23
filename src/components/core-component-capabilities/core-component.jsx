@@ -3,6 +3,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import RetryLogic from "./core-functions/retry-logic";
+import ErrorLogic from "./core-functions/error-logic";
+import StateManagement from "./core-functions/state-management";
 
 
 /**
@@ -25,14 +27,14 @@ export default class CoreComponent extends React.Component {
    * Call this function in the componentWillMount of the child component.
    */
   supportCoreFunctions = () => {
-      this.setState({
+      const a = {
         _managed_is_initialized : true,
-        _managed_error: false,
-        _managed_loading: false,
-        _managed_error_text: null
-      });
-
-      this.supports(RetryLogic);
+        _managed_loading: false
+      };
+      const b = this.supports(StateManagement);
+      const c = this.supports(RetryLogic);
+      const d = this.supports(ErrorLogic);
+      return {...a, ...b, ...c, ...d};
   }
 
 
@@ -50,19 +52,24 @@ export default class CoreComponent extends React.Component {
    */
   doChecks = () => {
     if(!this.isInitialized()) {
-      throw new Error("you need to call supportCoreFunctions from componentWillUpdate" +
-        "to use the capabilities");
+      throw new Error("call supportCoreFunctions from constructor " +
+        " and add the keys to state");
     }
   }
 
   /**
-   * Set the loading to true.
+   * Set the loading.
+   * use in componentWillUpdate for a component to update.
    * @param isLoading
    */
   setLoading = (isLoading) => {
      this.doChecks();
      if(typeof isLoading == "boolean") {
-       this.setState({_managed_loading: isLoading});
+       if(isLoading) {
+         StateManagement(this).setStateAsLoading();
+       } else {
+         StateManagement(this).setStateAsSuccess();
+       }
      } else {
        throw new Error("setLoading needs to be called with boolean argument");
      }
@@ -81,11 +88,14 @@ export default class CoreComponent extends React.Component {
    * Child needs to check doesParentHasInformation.
    * @returns {*}
    */
-  renderInformation = () => {
+  renderParentInformation = () => {
      if(this.doesParentHasInformation()) {
-       return (<div>Render Core Components information</div>);
+       if(StateManagement(this).inErrorState()) {
+         RetryLogic(this).retry();
+       }
+       return (<div>{this._getParentInformation()}</div>);
      } else {
-       return null;
+       return (<div>Please check doesParentHasInformation() before rendering</div>);
      }
    }
 
@@ -108,18 +118,65 @@ export default class CoreComponent extends React.Component {
    * has something to say to the user.
    * @returns {boolean}
    */
-  doesParentHasInformation() { //TODO implement
+  doesParentHasInformation = () => {
     this.doChecks();
-    return true;
+    const stateManagement = StateManagement(this);
+    return !stateManagement.inSuccessState() || stateManagement.inErrorState() || stateManagement.inLoadingState();
   }
 
 
   /**
-   * Enables this component with the functionality
-   * @param functionality
+   * Enables this component with the capability
+   * @param capability
    */
-  supports = (functionality) => {
-    functionality.enable(this);
+  supports = (capability) => {
+    this.capabilties.push(capability);
+    return capability(this).enable();
+  }
+
+  /*
+    Tracks all the capabilities
+   */
+  capabilties = [];
+
+
+  /**
+   * Notify success; will call setState
+   * call with setTimeout to avoid
+   */
+  notifyOnSuccess = () => {
+    StateManagement(this).setStateAsSuccess();
+    RetryLogic(this).reset();
+  }
+
+  /**
+   * This will call setState
+   * call with setTimeout to avoid
+   * @param errorText
+   */
+  notifyOnError = (errorText) => {
+    if(!errorText) {
+      const numRetries = RetryLogic(this).getNumRetries();
+      errorText = `Error occured!! retried ${numRetries} times`;
+    }
+    ErrorLogic(this).recordError(errorText);
+    StateManagement(this).setStateAsError();
+  }
+
+  /**
+   * Return the parent information if any.
+   * @private
+   */
+  _getParentInformation = () => {
+    if(StateManagement(this).inErrorState()) {
+      return ErrorLogic(this).getErrors();
+    } else if(StateManagement(this).inLoadingState()) {
+      return "Loading";
+    } else if(StateManagement(this).inSuccessState()) {
+      return "It seems the component shouldv'e rendered. You should not see this message";
+    } else {
+      return "Parent got no information";
+    }
   }
 }
 

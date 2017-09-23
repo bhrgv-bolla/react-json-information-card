@@ -1,4 +1,9 @@
 {
   "extends": "./node_modules/electrode-archetype-react-component/config/babel/.babelrc",
-  "plugins": ["transform-class-properties"]
+  "plugins": ["transform-class-properties"],
+  "env": {
+    "production": {
+      "plugins": [["transform-remove-console", { "exclude": [ "error", "warn"] }]]
+    }
+  }
 }

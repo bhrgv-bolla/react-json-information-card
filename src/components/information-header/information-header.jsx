@@ -18,26 +18,19 @@ export default class InformationHeader extends CoreComponent {
   constructor(props) {
     super(props);
     this.state = {
-      informationHeader : true
+      informationHeader : true,
+      ...this.supportCoreFunctions()
     };
-  }
-
-  componentWillMount() {
-    this.supportCoreFunctions();
-  }
-
-  componentDidMount() {
-    this.setLoading(false);
-    console.log("check state", this.state);
   }
 
   render() {
     if(this.doesParentHasInformation()) {
-      return this.renderInformation();
+      return this.renderParentInformation();
+    } else {
+      return (<div style={this.getStyle()} className={this.getClassName()}>
+        {this.props.text}
+      </div>);
     }
-    return (<div style={this.getStyle()} className={this.getClassName()}>
-                {this.props.text}
-            </div>);
   }
 
 
@@ -55,10 +48,11 @@ export default class InformationHeader extends CoreComponent {
    * Configurable styles.
    * @returns {*}
    */
-  getStyle() {
+  getStyle = () => {
     const { optionalStyle } = this.props;
     return this.getOrDefault(optionalStyle, {});
   }
+
 }
 
 
