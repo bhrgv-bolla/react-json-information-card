@@ -16,7 +16,6 @@
   },
   "homepage": "https://github.com/bhrgv-bolla/json-information-card",
   "dependencies": {
-    "electrode-archetype-react-component-dev": "^1.4.3",
     "prop-types": "^15.5.10"
   },
   "devDependencies": {
@@ -36,7 +35,8 @@
     "start": "gulp demo",
     "test": "gulp check",
     "report-coverage": "codecov -t ca3c16e4-d825-41cd-aff8-fd5ef0e107b0",
-    "docgen": "gulp generate"
+    "docgen": "gulp generate",
+    "karma": "node_modules/karma/bin/karma start node_modules/electrode-archetype-react-component-dev/config/karma/karma.conf.coverage.js --colors"
   },
   "keywords": [
     "react",

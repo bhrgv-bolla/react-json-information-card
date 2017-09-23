@@ -1,7 +1,5 @@
 import React from "react";
 
-import PropTypes from "prop-types";
-
 import RetryLogic from "./core-functions/retry-logic";
 import ErrorLogic from "./core-functions/error-logic";
 import StateManagement from "./core-functions/state-management";
@@ -25,6 +23,7 @@ export default class CoreComponent extends React.Component {
 
   /**
    * Call this function in the componentWillMount of the child component.
+   * @returns All keys to include in the component state.
    */
   supportCoreFunctions = () => {
       const a = {
