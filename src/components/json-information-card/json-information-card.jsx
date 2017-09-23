@@ -15,8 +15,10 @@ import InformationHeader from "../information-header/";
  * Given a Json and a path configuration this component will render a nice view
  * of information
  * TODO sections can be minimized.
+ * TODO externalize classes.
  */
 export default class JsonInformationCard extends React.Component {
+
 
   render() {
     const {pathConfiguration, jsonObject} = this.props;
